@@ -17,7 +17,7 @@ The main idea was to build something practical where a file can be shared with c
 
 ---
 
-#Why I built this
+# Why I built this
 
 I wanted to try something more backend-focused and had also faced may issues regarding sharing files through links and downloading those files withoutany proper security for the files being shared.
 
