@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #f6f7fb;
+    color: #1a1a1a;
+}
+
+/* main layout */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+/* vertical layout */
+.container {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* cards */
+.card {
+    padding: 20px;
+    border-radius: 18px;
+    background: rgb(120, 255, 140);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+/* accent card */
+.card-accent {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+}
+
+/* title */
+.title {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* inputs */
+.input {
+    /* width: 100%; */
+    height: 45px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+/* button */
+.btn {
+    /* width: 100%; */
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    background: rgb( 88 80 236);
+    color: white;
+    cursor: pointer;
+}
+
+/* link box */
+.link-box {
+    background:rgb(140 92 246);
+    padding: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+/* stat row */
+.stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h3 {
+    margin: 0;
+}
+
+/* timer */
+.timer {
+    margin-top: 10px;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* hover effects */
+.card {
+    transition: 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* input focus */
+.input:focus {
+    border-color: #6a11cb;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(106,17,203,0.1);
+}
+
+/* button hover */
+.btn {
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #333;
+}
+
+/* accent button (upload) */
+.btn-accent {
+    background: white;
+    color: #6a11cb;
+    font-weight: 600;
+}
+
+.btn-accent:hover {
+    background: #f2f2f2;
+}
+
+/* copy success */
+.copy-success {
+    color: green;
+    font-size: 13px;
+    margin-top: 5px;
+    display: none;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Complete</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="container">
+
+        <!-- SUCCESS -->
+        <div class="card card-accent">
+            <div class="title">Upload Successful</div>
+
+            <p><strong>File:</strong> {{ filename }}</p>
+
+            <p>Share this link to download:</p>
+
+            <div class="link-box" id="linkBox">
+                {{ link }}
+            </div>
+
+            <button class="btn btn-accent" onclick="copyLink()">Copy Link</button>
+
+            <div class="copy-success" id="copyMsg">
+                Link copied!
+            </div>
+
+            <div class="timer" id="timer"></div>
+        </div>
+
+        <!-- ACTION -->
+        <div class="card">
+            <div class="title">Next Step</div>
+
+            <a href="/">
+                <button class="btn">Upload Another File</button>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+// Copy link
+function copyLink() {
+    const text = document.getElementById("linkBox").innerText;
+    navigator.clipboard.writeText(text);
+
+    const msg = document.getElementById("copyMsg");
+    msg.style.display = "block";
+
+    setTimeout(() => {
+        msg.style.display = "none";
+    }, 2000);
+}
+
+// Countdown
+let time = {expiry_minutes}*60;
+
+function updateTimer() {
+    let m = Math.floor(time / 60);
+    let s = time % 60;
+
+    document.getElementById("timer").innerText =
+        "Expires in: " + m + ":" + (s < 10 ? "0" + s : s);
+
+    time--;
+
+    if (time >= 0) {
+        setTimeout(updateTimer, 1000);
+    } else {
+        document.getElementById("timer").innerText = "Link expired";
+    }
+}
+
+updateTimer();
+
+</script>
+
+</body>
+</html>
